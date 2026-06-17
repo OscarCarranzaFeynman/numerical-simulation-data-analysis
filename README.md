@@ -2,7 +2,7 @@
 
 Python pipeline for numerical simulation, parameter sweeps, data analysis, and visualization.
 
-This project applies scientific computing techniques to a hidden vector dark matter model. The code solves a Boltzmann-type differential equation, runs simulations over different model parameters, analyzes the numerical outputs, and generates visualizations of the results.
+This project applies scientific computing techniques to a hidden vector dark matter model. The code solves a Boltzmann differential equation, runs simulations over different model parameters, analyzes the numerical outputs, and generates visualizations of the results.
 
 ## What this project demonstrates
 
