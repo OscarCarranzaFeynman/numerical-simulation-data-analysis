@@ -1,53 +1,98 @@
 # Numerical Simulation and Data Analysis Pipeline
 
-Python pipeline for numerical simulation, parameter sweeps, data analysis, and visualization.
+Python project for numerical simulation, parameter sweeps, data analysis, and scientific visualization.
 
-This project applies scientific computing techniques to a hidden vector dark matter model. The code solves a Boltzmann differential equation, runs simulations over different model parameters, analyzes the numerical outputs, and generates visualizations of the results.
+This repository contains a computational pipeline for studying a hidden vector dark matter model. The project uses a theoretical physics case study, but the workflow shows skills in Python programming, numerical methods, simulation analysis, data processing, and visualization.
 
-## What this project demonstrates
+## Project Overview
 
+The pipeline solves a Boltzmann differential equation to model the evolution of a dark matter abundance. It then runs parameter sweeps over model parameters, analyzes the numerical outputs, identifies viable regions, and compares results with direct detection constraints.
+
+The main workflow includes:
+
+* Running a single numerical simulation
+* Solving stiff differential equations
+* Performing parameter scans
+* Filtering and analyzing simulation outputs
+* Interpolating external datasets
+* Creating visualizations from numerical and experimental data
+
+## Skills Demonstrated
+
+* Python programming for scientific computing
 * Numerical solution of differential equations
 * Parameter sweeps and simulation analysis
-* Data processing and filtering
-* Scientific visualization
-* Modular Python programming
-* Use of NumPy, SciPy, Matplotlib, Pandas, and multiprocessing
+* Data cleaning, filtering, and interpolation
+* Parallel computation with multiprocessing
+* Scientific visualization with Matplotlib
+* Modular code organization
+* Quantitative modeling and data driven analysis
 
-## Repository structure
+## Package Used
+
+* Python
+* NumPy
+* SciPy
+* Matplotlib
+* Pandas
+* Jupyter Notebook
+* multiprocessing
+
+## Repository Structure
 
 ```text
-evolver/      Core code for the model, equations, integrator, and utilities
-scripts/      Scripts for running simulations, sweeps, and plots
-notebooks/    Exploratory analysis notebooks
-figures/      Representative visualizations
-data/         Output folder for generated simulation files
+evolver/           Core package with the model, equations, integrator, interpolation, and utilities
+DirectDetection/   Direct detection notebooks, CSV datasets, and generated visualizations
+data/              Output folder for generated simulation files
+run.py             Runs one numerical simulation
+plot.py            Generates diagnostic plots from one simulation
+AnalyzeSweep.py    Processes parameter sweep outputs and extracts viable points
+requirements.txt   Python dependencies
 ```
 
-## Example use
+## Installation
 
-Run a single simulation:
+Clone the repository and install the dependencies:
 
 ```bash
-python scripts/run_single.py
+pip install -r requirements.txt
 ```
 
-Run a parameter sweep:
+## Usage
+
+Run a single simulation choosig the four free parameters of the model:
 
 ```bash
-python scripts/run_sweep.py
+python run.py
 ```
 
-Analyze sweep results:
+Generate diagnostic plots from a single simulation:
 
 ```bash
-python scripts/analyze_sweep.py
+python plot.py data/output output.pdf
+```
+Run a parameter sweep by choosing the parameter ranges in evolver/runSweep.py:
+
+```bash
+python -m evolver.runSweep
 ```
 
-## Example output
+Analyze the parameter sweep:
 
-![Direct Detection Constraints](figures/direct_detection_1_pretty.png)
+```bash
+python AnalyzeSweep.py
+```
+
+## Example Output
+
+The project includes direct detection visualizations comparing model predictions with external constraint datasets.
+
+![Direct Detection Constraints](DirectDetection/direct_detection_1_pretty.png)
+
+## Notes
+
+Simulation outputs are generated locally inside the `data/` folder and are not tracked by Git. This keeps the repository focused on source code, analysis notebooks, input datasets, and representative visualizations.
 
 ## About
 
-Although the case study comes from theoretical physics, the workflow demonstrates transferable skills in data analysis, numerical modeling, simulation, and visualization.
-
+Although the case study comes from theoretical physics, this project is designed to showcase practical and transferable skills in numerical simulation, data analysis, scientific computing, and visualization.
