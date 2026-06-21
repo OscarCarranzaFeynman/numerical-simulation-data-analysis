@@ -1,0 +1,5 @@
+# Do not count Mathematica notebooks in GitHub language statistics
+DirectDetection/*.nb linguist-vendored
+
+# Count Jupyter notebooks as Python for GitHub language statistics
+*.ipynb linguist-language=Python
