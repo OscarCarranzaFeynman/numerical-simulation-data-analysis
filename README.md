@@ -93,6 +93,10 @@ The project includes direct detection visualizations comparing model predictions
 
 Simulation outputs are generated locally inside the `data/` folder and are not tracked by Git. This keeps the repository focused on source code, analysis notebooks, input datasets, and representative visualizations.
 
+## Acknowledgments
+
+Part of the original numerical evolution framework was adapted from code developed by Dr. Patrick Fitzpatrick. I extended and modified it for the hidden vector dark matter case study, including the model specific implementation, parameter sweep analysis, and visualization workflow.
+
 ## About
 
 Although the case study comes from theoretical physics, this project is designed to showcase practical and transferable skills in numerical simulation, data analysis, scientific computing, and visualization.
